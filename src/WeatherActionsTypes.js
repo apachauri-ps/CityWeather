@@ -1,0 +1,10 @@
+
+const FETCH_WEATHER_DETAILS = 'FETCH_WEATHER_DETAILS';
+const UPDATE_WEATHER_DETAILS = 'UPDATE_WEATHER_DETAILS';
+
+const WeatherActionsTypes = {
+    FETCH_WEATHER_DETAILS,
+    UPDATE_WEATHER_DETAILS,
+};
+
+export default WeatherActionsTypes;
