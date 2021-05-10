@@ -1,6 +1,6 @@
 
-import {apiRequest} from './NetworkService';
-import AppConstants from './AppConstants';
+import {apiRequest} from '../../common/NetworkService';
+import AppConstants from '../../common/AppConstants';
 
 export const weatherDetailsAPIRequest = (pincode) => {
     return apiRequest({

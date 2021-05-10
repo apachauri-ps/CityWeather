@@ -1,18 +1,18 @@
 import React from 'react';
-
-import AppConstants from './AppConstants';
-
 import {
     StyleSheet,
     View,
     Text,
     Image,
 } from 'react-native';
+import moment from 'moment';
+
+import AppConstants from '../../common/AppConstants';
 
 const WeatherItem = ({item}) => {
 
     const dateString = item.dt_txt
-    const date = new Date(dateString)
+    const dayName = moment(dateString).format('dddd HH:MM');
     const temprature = `${item.main.temp.toFixed(0)}°C`
     let iconURL;
     if (item.weather[0]) {
@@ -21,7 +21,7 @@ const WeatherItem = ({item}) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.weatherText}>{'Saturday'}</Text>
+            <Text style={styles.weatherText}>{dayName}</Text>
             <Text style={styles.weatherText}>{temprature}</Text>
             <Image source={{ uri: iconURL }} style={styles.weatherIcon} />
         </View>

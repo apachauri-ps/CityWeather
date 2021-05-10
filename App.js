@@ -25,9 +25,9 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import { Provider } from 'react-redux';
-import { store } from './src/StoreConfig';
-import HomeScreen from './src/HomeScreen';
-import WeatherDetailsScreen from './src/WeatherDetailsScreen';
+import { store } from './src/common/StoreConfig';
+import HomeScreen from './src/weather/screens/HomeScreen';
+import WeatherDetailsScreen from './src/weather/screens/WeatherDetailsScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 

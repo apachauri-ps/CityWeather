@@ -74,7 +74,6 @@ export const apiRequest = ({ apiUrl, method, payload }) => {
         const returnVal = {};
         returnVal.response_type = 'success';
         returnVal.response = response.data;
-        // console.log(JSON.stringify(response.data))
         return returnVal;
     })
     .catch((error) => {

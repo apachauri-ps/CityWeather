@@ -1,29 +1,36 @@
 import React from 'react';
-
 import {
     StyleSheet,
     View,
     FlatList,
 } from 'react-native';
+import moment from 'moment';
 
-import WeatherHeader from './WeatherHeader';
-import WeatherItem from './WeatherItem';
+import WeatherHeader from '../components/WeatherHeader';
+import WeatherItem from '../components/WeatherItem';
 
 const WeatherDetailsScreen = (props) => {
 
     const { pincode, city, days } = props.route.params;
-    const [todayWeather, ...nextDays] = days
+    const [todayWeather, ...restDays] = days
 
     let weatherHeaderInfo = {
         cityName: city.name,
     }
 
+    let nextDays = [];
     if (todayWeather) {
         weatherHeaderInfo.temprature = todayWeather.main.temp
 
         if (todayWeather.weather[0]) {
             weatherHeaderInfo.weather = todayWeather.weather[0].main
         }
+
+        const todayMoment = moment(todayWeather.dt_txt, 'YYYY-MM-DD')
+        nextDays = restDays.filter((day) => {
+            const dayMoment = moment(day.dt_txt, 'YYYY-MM-DD')
+            return (dayMoment > todayMoment)
+        })
     }
 
     const onPressBack = () => {

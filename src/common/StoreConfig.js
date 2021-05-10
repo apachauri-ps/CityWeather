@@ -1,7 +1,7 @@
 import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import rootSaga from './WeatherSaga';
-import rootReducer from './WeatherReducer';
+import rootSaga from '../weather/store/WeatherSaga';
+import rootReducer from '../weather/store/WeatherReducer';
 
 const sagaMiddleware = createSagaMiddleware();
 const defaultMiddlewares = getDefaultMiddleware({

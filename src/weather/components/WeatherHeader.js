@@ -9,23 +9,17 @@ import {
 
 const WeatherHeader = (props) => {
 
-    console.log(`Weather Header props: ${JSON.stringify(props)}`)
-
     const { cityName, weather, temprature } = props.info
 
     const onPressBack = () => {
         props.onBack()
-        console.log('onPressBack')
     }
 
     return (
         <View style={styles.container}>
-
-
             <Text style={styles.cityNameText}>{cityName}</Text>
             <Text style={styles.weatherText}>{weather}</Text>
             <Text style={styles.tempratureText}>{`${temprature.toFixed(0)}°C`}</Text>
-
             <Pressable style={styles.backButtonBackground} onPress={onPressBack}>
                 <View >
                     <Text style={styles.backButtonTitle}> Back </Text>
@@ -41,7 +35,6 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'orange',
         paddingVertical: 24,
-        // paddingHorizontal: 24,
     },
     backButtonBackground: {
         left: 8,
@@ -58,7 +51,7 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     cityNameText: {
-        paddingTop: 40,
+        paddingTop: 50,
         textAlign: 'center',
         fontSize: 36,
         fontWeight: '300',
